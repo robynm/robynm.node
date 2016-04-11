@@ -8,8 +8,8 @@ router.get('/', function(req, res, next) {
     var d = JSON.parse(response);
     res.render('photos', {
       pics: d.photos.photo, 
-      title: 'robyn m', 
-      pageTitle: 'photos'
+      title: 'robyn meshulam', 
+      page_title: 'photos'
     });
   });
 });

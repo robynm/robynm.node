@@ -1,9 +1,10 @@
 extends layout
 
 block content
-  h1= title
-  p= pageTitle
-  
-  each val in pics
-    img(src='https://farm' + val.farm + '.staticflickr.com/' + val.server + '/' + val.id + '_' + val.secret + '.jpg')
+  main
+    h2= page_title
+    p photos
+    
+    each val in pics
+      img(src='https://farm' + val.farm + '.staticflickr.com/' + val.server + '/' + val.id + '_' + val.secret + '.jpg')
   
