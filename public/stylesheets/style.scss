@@ -1,18 +1,38 @@
-$link-blue: #00B7FF;
-$link-dark-blue: #0066A1;
+$color-blue: #00B7FF;
+$color-dark-blue: #0066A1;
+$color-light-gray: #eaeaea;
+$color-dark-gray: rgb(66, 70, 72);
+$font-sans: "Lucida Grande", Helvetica, Arial, sans-serif;
 
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  line-height: 1.5em;
+  font: 14px/1.5em $font-sans;
 }
 
 a {
-  color: $link-blue;
+  color: $color-blue;
 }
 
 a:hover {
-  color: $link-dark-blue;
+  color: $color-dark-blue;
+}
+
+button {
+  border: 1px solid $color-blue;
+  border-radius: 20px;
+  background: none;
+  font: 12px $font-sans;
+  padding: 10px 20px;
+  margin: 20px;
+  color: $color-dark-gray;
+}
+
+button:hover {
+  color: $color-dark-blue;
+}
+
+button:focus {
+  outline: none;
 }
 
 nav li, footer li {
@@ -28,6 +48,23 @@ nav ul, footer ul {
 }
 
 main {
-  max-width: 400px;
   margin: 30px 0;
+  
+  .content {
+    max-width: 400px;
+  }
+
+  .album {
+    max-width: 800px;
+    transition: 2s all ease;
+  }
+
+  picture {
+    display: inline-block;
+    margin: 3%;
+
+    img {
+      transition: 2s all ease;
+    }
+  }
 }

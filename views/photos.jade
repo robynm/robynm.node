@@ -3,8 +3,9 @@ extends layout
 block content
   main
     h2= page_title
-    p photos
     
-    each val in pics
-      img(src='https://farm' + val.farm + '.staticflickr.com/' + val.server + '/' + val.id + '_' + val.secret + '.jpg')
-  
+    div.album
+      each val in pics
+        picture
+          img(src='https://farm' + val.farm + '.staticflickr.com/' + val.server + '/' + val.id + '_' + val.secret + '_q.jpg')
+      button(class="more", action="/photos/more") more
