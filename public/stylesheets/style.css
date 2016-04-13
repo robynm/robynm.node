@@ -9,16 +9,15 @@ a:hover {
   color: #0066A1; }
 
 button {
-  border: 1px solid #00B7FF;
-  border-radius: 20px;
+  border: 1px solid black;
   background: none;
   font: 12px "Lucida Grande", Helvetica, Arial, sans-serif;
-  padding: 10px 20px;
-  margin: 20px;
-  color: #424648; }
+  padding: 10px 30px;
+  margin: 20px; }
 
 button:hover {
-  color: #0066A1; }
+  color: #0066A1;
+  border-color: #0066A1; }
 
 button:focus {
   outline: none; }

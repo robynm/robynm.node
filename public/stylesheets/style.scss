@@ -18,17 +18,16 @@ a:hover {
 }
 
 button {
-  border: 1px solid $color-blue;
-  border-radius: 20px;
+  border: 1px solid black;
   background: none;
   font: 12px $font-sans;
-  padding: 10px 20px;
+  padding: 10px 30px;
   margin: 20px;
-  color: $color-dark-gray;
 }
 
 button:hover {
   color: $color-dark-blue;
+  border-color: $color-dark-blue;
 }
 
 button:focus {

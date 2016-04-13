@@ -5,6 +5,7 @@ block content
     h2= page_title
     
     div.album
+      each val in pics
+        picture
+          img(src='https://farm' + val.farm + '.staticflickr.com/' + val.server + '/' + val.id + '_' + val.secret + '_q.jpg')
       button(class="more", action="/photos/more") more
-    div#example
-    script(src='/javascripts/bundle.js')
