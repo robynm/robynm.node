@@ -4,8 +4,11 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
+    "start:watch" : "nodemon robynm",
     "build:css": "node-sass ./public/stylesheets/style.scss ./public/stylesheets/style.css",
-    "watch:css": "nodemon -e scss -w public/stylesheets/ -x 'npm run build:css'"
+    "build:js": "browserify -t [ babelify --presets [ react ] ] ./public/javascripts/js-source/main.js -o ./public/javascripts/bundle.js",
+    "build": "npm run build:css && npm run build:js",
+    "build:watch": "nodemon -e scss,js -w public/stylesheets/ -w public/javascripts/js-source -x 'npm run build:css && npm run build:js'"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
@@ -17,6 +20,12 @@
     "serve-favicon": "~2.3.0"
   },
   "devDependencies": {
-    "node-sass": "^3.4.2"
+    "babel-preset-es2015": "^6.6.0",
+    "babel-preset-react": "^6.5.0",
+    "babelify": "^7.2.0",
+    "browserify": "^13.0.0",
+    "node-sass": "^3.4.2",
+    "react": "^15.0.1",
+    "react-dom": "^15.0.1"
   }
 }
