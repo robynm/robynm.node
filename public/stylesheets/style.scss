@@ -5,7 +5,11 @@ $color-dark-gray: rgb(66, 70, 72);
 $font-sans: "Lucida Grande", Helvetica, Arial, sans-serif;
 
 body {
-  padding: 50px;
+
+  @media (min-width: 460px) {
+    padding: 50px;  
+  }
+  
   font: 14px/1.5em $font-sans;
 }
 
@@ -22,7 +26,8 @@ button {
   background: none;
   font: 12px $font-sans;
   padding: 10px 30px;
-  margin: 20px;
+  margin: 20px auto;
+  display: block;
 }
 
 button:hover {
@@ -46,16 +51,22 @@ nav ul, footer ul {
   margin: 1.34em 0;
 }
 
+.c1 {
+  max-width: 400px;
+}
+
+.c2 {
+  max-width: 800px;
+}
+
 main {
   margin: 30px 0;
-  
-  .content {
-    max-width: 400px;
-  }
 
   .album {
-    max-width: 800px;
     transition: 2s all ease;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   picture {

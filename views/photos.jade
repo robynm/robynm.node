@@ -1,11 +1,11 @@
 extends layout
 
 block content
-  main
+  main.c2
     h2= page_title
     
     div.album
       each val in pics
         picture
           img(src='https://farm' + val.farm + '.staticflickr.com/' + val.server + '/' + val.id + '_' + val.secret + '_q.jpg')
-      button(class="more", action="/photos/more") more
+    button(class="more", action="/photos/more") more
