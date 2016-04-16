@@ -1,11 +1,14 @@
 extends layout
 
 block content
-  main.c2
-    h2= page_title
+  main.mw3.mv3.mh0
+    h2.f4.lh1= page_title
     
-    div.album
+    div#container
+    
+  //  
+    div#album.tra.df.flw.center-fl
       each val in pics
-        picture
-          img(src='https://farm' + val.farm + '.staticflickr.com/' + val.server + '/' + val.id + '_' + val.secret + '_q.jpg')
-    button(class="more", action="/photos/more") more
+        picture.di.ma3
+          img(class='tra' src='https://farm' + val.farm + '.staticflickr.com/' + val.server + '/' + val.id + '_' + val.secret + '_q.jpg')
+    button(class="btn b db sans f7 pv1 ph2 center-b mv3", action="more") more
