@@ -6,7 +6,7 @@ var PhotoAlbum = React.createClass({
       cache: false,
       success: function(data) {
         console.log(data);
-        this.setState({data: data.photos.photo});
+        this.setState({data: data});
       }.bind(this),
       error: function(xhr, status, err) {
         console.error(this.props.url, status, err.toString());
@@ -15,6 +15,16 @@ var PhotoAlbum = React.createClass({
   },
   onPhotoSubmit: function(page) {
     var photos = this.state.data;
+    var placeholders = [];
+    for ( var i = 0; i < 12; i++ ) {
+      placeholders[i] = {
+        id: i,
+        src: '/images/placeholder.png',
+        alt: 'placeholder'
+      };
+    }
+    placeholders = photos.concat(placeholders);
+    this. setState({data: placeholders});
 
     $.ajax({
       url: this.props.url,
@@ -23,7 +33,7 @@ var PhotoAlbum = React.createClass({
       data: page,
       success: function(data) {
         console.log(data);
-        var newPhotos = photos.concat(data.photos.photo);
+        var newPhotos = photos.concat(data);
         this.setState({data: newPhotos});
       }.bind(this),
       error: function(xhr, status, err) {
@@ -32,7 +42,15 @@ var PhotoAlbum = React.createClass({
     });
   },
   getInitialState: function() {
-    return {data: []};
+    var placeholders = [];
+    for ( var i = 0; i < 12; i++ ) {
+      placeholders[i] = {
+        id: i,
+        src: '/images/placeholder.png',
+        alt: 'placeholder'
+      };
+    }
+    return {data: placeholders};
   },
   componentDidMount: function() {
     this.loadInitialPhotos();
@@ -52,7 +70,7 @@ var PhotoPage = React.createClass({
   render: function() {
     var pictureNodes = this.props.data.map(function(photo) {
       return(
-        <Photo farm={photo.farm} server={photo.server} id={photo.id} secret={photo.secret} key={photo.id} />
+        <Photo src={photo.src} alt={photo.alt} key={photo.id} />
       );
     });
     return(
@@ -65,10 +83,15 @@ var PhotoPage = React.createClass({
 
 var Photo = React.createClass({
   render: function() {
-    var source = "https://farm" + this.props.farm + ".staticflickr.com/" + this.props.server + "/" + this.props.id + "_" + this.props.secret + "_q.jpg";
+
+    var transition = '';
+    if ( this.props.alt !== "placeholder" ) {
+      transition = "fadein";
+    }
+    
     return(
       <picture className="di ma3">
-        <img className="tra" src={source} />
+        <img className={transition} src={this.props.src} width="150" height="150" alt={this.props.alt} />
       </picture>
     );
   }

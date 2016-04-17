@@ -45,5 +45,23 @@ module.exports = {
       // do something
     });
 
+  },
+
+  getSource: function(photoList) {
+    var photos, photoSources = [];
+    var photoList = JSON.parse(photoList);
+
+    if ( photoList.stat === "ok" && Array.isArray(photoList.photos.photo) ) {
+      photos = photoList.photos.photo;
+
+      for ( var i = 0; i < photos.length; i++ ) {
+        photoSources[i] = {
+          id: photos[i].id,
+          src: "https://farm" + photos[i].farm + ".staticflickr.com/" + photos[i].server + "/" + photos[i].id + "_" + photos[i].secret + "_q.jpg",
+          alt: photos[i].title
+        }
+      }
+    }
+    return photoSources;
   }
 };

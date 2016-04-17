@@ -49,7 +49,19 @@ li { list-style: none; }
 
 
 // transitions
-.tra { transition: 2s all ease; }
+.tra { transition: 1s all ease; }
+
+@keyframes fadein {
+  from {
+    opacity: 0.3;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fadein { animation: 2s ease fadein; }
+
 
 // borders
 .bn { border-style: none; }
@@ -62,8 +74,8 @@ li { list-style: none; }
 
 // backgrounds
 .bgn { background: none; }
-.bg--light-gray { background: $color-light-gray; }
-.bg--gray { background: $color-gray; }
+.bg--light-gray { background-color: $color-light-gray; }
+.bg--gray { background-color: $color-gray; }
 
 // modules
 .btn {

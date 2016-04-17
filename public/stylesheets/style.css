@@ -84,7 +84,16 @@ li {
   line-height: 2em; }
 
 .tra {
-  transition: 2s all ease; }
+  transition: 1s all ease; }
+
+@keyframes fadein {
+  from {
+    opacity: 0.3; }
+  to {
+    opacity: 1; } }
+
+.fadein {
+  animation: 2s ease fadein; }
 
 .bn {
   border-style: none; }
@@ -112,10 +121,10 @@ li {
   background: none; }
 
 .bg--light-gray, .btn {
-  background: #EEEEEE; }
+  background-color: #EEEEEE; }
 
 .bg--gray, .btn:hover {
-  background: #DDDDDD; }
+  background-color: #DDDDDD; }
 
 .btn:focus {
   outline: none;

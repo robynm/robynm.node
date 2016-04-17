@@ -5,14 +5,14 @@ var Photos = require('../models/photos');
 router.get('/', function(req, res, next) {
 
   Photos.getPhotos( {'requestType': 'flickr.people.getPublicPhotos', 'per_page': '12', 'page': '1'}, function(response) {
-    res.json(JSON.parse(response));
+    res.json(Photos.getSource(response));
   });
 });
 
 router.post('/', function(req, res, next) {
 
   Photos.getPhotos( {'requestType': 'flickr.people.getPublicPhotos', 'per_page': '12', 'page': req.body.page}, function(response) {
-    res.json(JSON.parse(response));
+    res.json(Photos.getSource(response));
   });
 });
 
