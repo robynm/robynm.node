@@ -90,7 +90,7 @@ var Photo = React.createClass({
     }
     
     return(
-      <picture className="di ma3">
+      <picture className="di mb3 ml1 mr2">
         <img className={transition} src={this.props.src} width="150" height="150" alt={this.props.alt} />
       </picture>
     );

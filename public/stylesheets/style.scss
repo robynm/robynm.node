@@ -27,7 +27,7 @@ li { list-style: none; }
 .flw { flex-wrap: wrap; }
 .center-fl { justify-content: center; }
 .center-b { margin-left: auto; margin-right: auto; }
-.center-i { text-align: center; }
+.center { text-align: center; }
 
 // type
 .normal { font-weight: normal; }
@@ -182,3 +182,27 @@ li { list-style: none; }
 .pv3 { @extend .pt3; @extend .pb3; }
 .pv4 { @extend .pt4; @extend .pb4; }
 .pv5 { @extend .pt5; @extend .pb5; }
+
+.flex-container {
+  @extend .df, .flw;
+}
+
+.thumbnail {
+  background: $color-gray center center no-repeat;
+  width: 212px;
+  height: 230px;
+
+  a {
+    text-decoration: none;
+    color: transparent;
+    @extend .db;
+    width: 100%;
+    height: 100%;
+    transition: .2s all ease;
+  }
+
+  a:hover, a:focus, a:active {
+    color: white;
+    background-color: rgba(0,0,0,.5);
+  }
+}

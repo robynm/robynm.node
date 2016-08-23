@@ -19,19 +19,19 @@ li {
 .dn {
   display: none; }
 
-.db {
+.db, .thumbnail a {
   display: block; }
 
 .di {
   display: inline; }
 
-.df {
+.df, .flex-container {
   display: flex; }
 
 .dib {
   display: inline-block; }
 
-.flw {
+.flw, .flex-container {
   flex-wrap: wrap; }
 
 .center-fl {
@@ -41,7 +41,7 @@ li {
   margin-left: auto;
   margin-right: auto; }
 
-.center-i {
+.center {
   text-align: center; }
 
 .normal {
@@ -309,3 +309,17 @@ li {
 
 .pb5, .pv5 {
   padding-bottom: 4rem; }
+
+.thumbnail {
+  background: #DDDDDD center center no-repeat;
+  width: 212px;
+  height: 230px; }
+  .thumbnail a {
+    text-decoration: none;
+    color: transparent;
+    width: 100%;
+    height: 100%;
+    transition: .2s all ease; }
+  .thumbnail a:hover, .thumbnail a:focus, .thumbnail a:active {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5); }
